@@ -7,10 +7,8 @@ export default function Navbar() {
   return (
     <div>
       <nav className="bg-white shadow-sm border-b border-gray-100">
-        {/* Mobile Navbar */}
         <div className="md:hidden">
           <div className="flex items-center justify-between p-4">
-            {/* Logo */}
             <Link to="/" className="flex items-center gap-2 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-indigo-600">
                 <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
@@ -20,7 +18,6 @@ export default function Navbar() {
               <span className="text-xl font-bold text-indigo-600">Shelfio</span>
             </Link>
 
-            {/* Hamburger Menu */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -31,7 +28,6 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Dropdown */}
           {isMenuOpen && (
             <div className="px-4 pt-2 pb-4 border-t border-gray-200">
               <div className="flex items-center gap-2 mb-4 p-2 bg-gray-50 rounded-lg">
@@ -66,10 +62,8 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Desktop Navbar */}
         <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo */}
             <Link to="/" className="flex items-center gap-2 cursor-pointer shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-indigo-600">
                 <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
@@ -79,7 +73,6 @@ export default function Navbar() {
               <span className="text-xl font-bold text-indigo-600">Shelfio</span>
             </Link>
 
-            {/* Search Bar */}
             <div className="flex-1 max-w-2xl mx-8">
               <div className="relative flex items-center">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -95,7 +88,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Right Side Items */}
             <div className="flex items-center gap-4">
               <Link to="/create" className="flex items-center gap-2 text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-xl transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
