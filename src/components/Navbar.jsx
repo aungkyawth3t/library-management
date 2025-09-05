@@ -62,7 +62,7 @@ export default function Navbar() {
           )}
         </div>
 
-        <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="hidden md:block max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center gap-2 cursor-pointer shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-indigo-600">

@@ -5,7 +5,6 @@ function Home() {
   return (
     <>
     <HeroSection/>
-
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-3">
         {[1, 2, 3, 4, 5].map(() => (
           <div className="p-4 border-1 border-gray-300 rounded">
