@@ -4,19 +4,22 @@
             "id" : 1,
             "title" : "JavaScript On Poit",
             "description" : "best JS Book",
-            "categories" : ["JavaScript", "Programming", "Web Dev"]
+            "categories" : ["JavaScript", "Programming", "Web Dev"],
+            "author" : "Aung Kyaw Thet"
         },
         {
             "id" : 2,
             "title" : "PersonL Home Page",
             "description" : "best PHP Book",
-            "categories" : ["PHP", "Programming", "Web Dev"]
+            "categories" : ["PHP", "Programming", "Web Dev"],
+            "author" : "Aung Kyaw Thet"
         },
         {
             "id" : 3,
             "title" : "React Basic",
             "description" : "best front-end library",
-            "categories" : ["ReactJS", "Programming", "Web Dev"]
+            "categories" : ["ReactJS", "Programming", "Web Dev"],
+            "author" : "Aung Kyaw Thet"
         }
     ]
 }

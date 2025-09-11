@@ -25,22 +25,21 @@ export default function BookDetail() {
                 {book.title}
               </h1>
               <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">
-                by <span class="font-medium">Author Name</span> · 220 pages · 6 hr read
+                by <span class="font-medium"> {book.author} </span> · 220 pages · 6 hr read
               </p>
 
               <div class="mt-4 flex flex-wrap gap-2">
                 <span class="text-xs font-medium px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
-                  Category 1
+                  {book.categories[0]}
                 </span>
                 <span class="text-xs font-medium px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
-                  Category 2
+                  {book.categories[1]}
                 </span>
               </div>
 
               <div class="mt-6 text-slate-700 dark:text-slate-300">
                 <p class="leading-relaxed text-sm md:text-base">
-                  This is a short description of the book. It introduces the content,
-                  theme, and purpose of the book in a few lines.
+                  {book.description}
                 </p>
                 <button class="mt-4 inline-block text-sm font-medium underline underline-offset-4 text-sky-600 dark:text-sky-400">
                   Read more
