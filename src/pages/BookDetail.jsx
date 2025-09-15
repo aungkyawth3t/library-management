@@ -29,12 +29,11 @@ export default function BookDetail() {
               </p>
 
               <div class="mt-4 flex flex-wrap gap-2">
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
-                  {book.categories[0]}
-                </span>
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
-                  {book.categories[1]}
-                </span>
+                 {book.categories.map(c => (
+                  <span class="text-xs font-medium px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
+                    {c}
+                  </span>
+                  ))}
               </div>
 
               <div class="mt-6 text-slate-700 dark:text-slate-300">
