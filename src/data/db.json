@@ -2,7 +2,7 @@
     "books" : [
         {
             "id" : 1,
-            "title" : "JavaScript On Poit",
+            "title" : "JavaScript On Point",
             "description" : "best JS Book",
             "categories" : ["JavaScript", "Programming", "Web Dev"],
             "author" : "Aung Kyaw Thet"
