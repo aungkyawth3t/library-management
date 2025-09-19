@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react';
+import useFetch from '../hooks/useFetch';
 
 export default function Create() {
-  let [title, setTitle] = useState("");
-  let [description, setDescription] = useState("");
-  let [newCategory, setNewCategory] = useState("");
-  let [categories, setCategories] = useState([]);
+  let [title, setTitle] = React.useState("");
+  let [description, setDescription] = React.useState("");
+  let [newCategory, setNewCategory] = React.useState("");
+  let [categories, setCategories] = React.useState([]);
+
+  let {setPostData, data: book} = useFetch('http://localhost:3000/books', "POST")
 
   let addCategory = (e) => {
     e.preventDefault();
@@ -12,9 +15,24 @@ export default function Create() {
     setNewCategory('');
   }
 
+  let addBook = (e) => {
+    e.preventDefault();
+
+    let data = {
+      title,
+      description, 
+      categories
+    }
+    setPostData(data);
+  }
+
+  useEffect(() => {
+    console.log(book)
+  }, [book])
+
   return (
     <div>
-      <form className="w-full max-w-lg mx-auto mt-2vc">
+      <form className="w-full max-w-lg mx-auto mt-2vc" onSubmit={addBook}>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
