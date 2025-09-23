@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import useFetch from '../hooks/useFetch';
+import { useNavigate } from 'react-router-dom';
 
 export default function Create() {
   let [title, setTitle] = React.useState("");
@@ -7,7 +8,8 @@ export default function Create() {
   let [newCategory, setNewCategory] = React.useState("");
   let [categories, setCategories] = React.useState([]);
 
-  let {setPostData, data: book} = useFetch('http://localhost:3000/books', "POST")
+  let { setPostData, data: book, loading } = useFetch('http://localhost:3000/books', "POST");
+  let navigate = useNavigate();
 
   let addCategory = (e) => {
     e.preventDefault();
@@ -28,6 +30,9 @@ export default function Create() {
 
   useEffect(() => {
     console.log(book)
+    if (book) {
+      navigate('/');
+    }
   }, [book])
 
   return (
@@ -73,6 +78,11 @@ export default function Create() {
         </div>
 
         <button className="flex items-center gap-2 text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition-colors duration-200 w-full justify-center">
+          {loading && (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-spin" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-8.707a1 1 0 0 0-1.414-1.414l-4 4a1 1 0 0 0 0 1.414l4-4z" clipRule="evenodd" />
+            </svg>
+          )}
           <span>Create Book</span>
         </button>
       </form>

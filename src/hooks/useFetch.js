@@ -14,7 +14,24 @@ function useFetch(url, method = "GET") {
       method
     }
     setLoading(true);
-    if (method === "POST") {
+    let fetchData = () => {
+      fetch(url, options)
+        .then(res => {
+          if(!res.ok) {
+            throw Error('something went wrong!');
+          }
+          return res.json();
+        })
+        .then(data => {
+          setData(data);
+          setError(null);
+          setLoading(false);
+      })
+      .catch(e => {
+        setError(e.message);
+      })
+    }
+    if (method === "POST" && postData) {
       options = {
         ...options, 
         headers: {
@@ -22,23 +39,14 @@ function useFetch(url, method = "GET") {
         },
         body : JSON.stringify(postData)
       }
+      fetchData();
     }
 
-    fetch(url, options)
-      .then(res => {
-        if(!res.ok) {
-          throw Error('something went wrong!');
-        }
-        return res.json();
-      })
-      .then(data => {
-        setData(data);
-        setError(null);
-        setLoading(false);
-    })
-    .catch(e => {
-      setError(e.message);
-    })
+    if (method === "GET") {
+      fetchData();
+      setLoading(false);
+    }
+
     return () => {
       abortController.abort();
     }
