@@ -13,6 +13,9 @@ export default function Create() {
 
   let addCategory = (e) => {
     e.preventDefault();
+    if(newCategory && categories.includes(newCategory)) {
+      return;
+    }
     setCategories(prev => [newCategory, ...prev])
     setNewCategory('');
   }
@@ -77,13 +80,8 @@ export default function Create() {
           </div>
         </div>
 
-        <button className="flex items-center gap-2 text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition-colors duration-200 w-full justify-center">
-          {loading && (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-spin" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-8.707a1 1 0 0 0-1.414-1.414l-4 4a1 1 0 0 0 0 1.414l4-4z" clipRule="evenodd" />
-            </svg>
-          )}
-          <span>Create Book</span>
+        <button className="flex items-center gap-2 text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition-colors duration-200 w-full justify-center cursor-pointer">
+          <span>Create</span>
         </button>
       </form>
     </div>
