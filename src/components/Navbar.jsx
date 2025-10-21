@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  let { theme } = useContext(ThemeContext);
+
   return (
     <div>
-      <nav className="bg-white shadow-sm border-b border-gray-100">
+      <nav className={`${theme === 'dark' ? 'bg-blue-100' : 'bg-yellow-100'} shadow-sm border-b border-gray-100`}>
         <div className="md:hidden">
           <div className="flex items-center justify-between p-4">
             <Link to="/" className="flex items-center gap-2 cursor-pointer">
