@@ -5,11 +5,11 @@ import useTheme from '../hooks/useTheme';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  let { theme } = useTheme();
+  let { theme, changeTheme } = useTheme();
 
   return (
     <div>
-      <nav className={`${theme === 'dark' ? 'bg-blue-100' : 'bg-yellow-100'} shadow-sm border-b border-gray-100`}>
+      <nav onClick={changeTheme} className={`${theme === 'dark' ? 'bg-blue-100' : 'bg-yellow-100'} shadow-sm border-b border-gray-100`}>
         <div className="md:hidden">
           <div className="flex items-center justify-between p-4">
             <Link to="/" className="flex items-center gap-2 cursor-pointer">
