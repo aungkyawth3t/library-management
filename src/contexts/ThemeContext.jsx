@@ -5,7 +5,7 @@ let ThemeContext = createContext();
 let ThemeReducer = (state, action) => {
     switch(action.type) {
         case "CHANGE_THEME" : 
-            return {...state, theme : action.payload}
+            return {...state, theme : action.payload }
         default : 
             return state
     }
